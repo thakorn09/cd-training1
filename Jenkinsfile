@@ -8,9 +8,17 @@ pipeline {
                 }
             }
 
+        stage('login') {
+            steps{
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'DockerCredentail', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+            sh 'docker login -u $USERNAME -p $PASSWORD'
+        }
+            }
+        }
+
         stage('push docker') {
             steps {
-                    sh 'docker login'
+                    sh 'docker login --username thakorn09 password  '
                     sh 'docker push  thakorn09/todoapp'
                 }
             }
