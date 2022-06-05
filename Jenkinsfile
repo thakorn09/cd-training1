@@ -23,6 +23,8 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@ip-172-31-22-175 docker rm hello'
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@ip-172-31-22-175 docker image rm hello-world'
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@ip-172-31-22-175 rm /home/ubuntu/hello.sh'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@ip-172-31-22-175 docker pull thakorn09/todoapp'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@ip-172-31-22-175 docker run -d -p 1000:3000 thakorn09/todoapp'
                     }
                     
                 }  
