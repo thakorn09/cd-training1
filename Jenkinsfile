@@ -10,7 +10,7 @@ pipeline {
 
         stage('push docker') {
             steps {
-                    sh 'docker push  thakorn09/todoapp .'
+                    sh 'docker push  thakorn09/todoapp'
                 }
             }
         
