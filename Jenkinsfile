@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('build docker') {
             steps {
-                nodejs('Node17.9') {   
                     sh 'docker build -t thakorn09/todoapp .'
                 }
             }
