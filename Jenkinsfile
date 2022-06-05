@@ -7,7 +7,7 @@ pipeline {
                     sh 'docker build -t thakorn09/todoapp .'
                 }
             }
-        }
+        
         stage('Prepare Hello script') {
             steps {
                 sh 'echo \'docker run --name hello hello-world\' > hello.sh'
@@ -27,6 +27,7 @@ pipeline {
                     
                 }  
             }
+    }
 
     }
 
