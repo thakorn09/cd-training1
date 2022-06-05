@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('confirm version') {
             steps {
-                nodejs('Node17.9') {
+                nodejs('node17.9') {
                     sh 'node -v'
                     sh 'npm -v'
                 }
@@ -17,5 +17,14 @@ pipeline {
                 }
             }
         }
+
+        stage('build docker') {
+            steps {
+                nodejs('Node17.9') {   
+                    sh 'docker build -t thakorn09/todoapp .'
+                }
+            }
+        }
+
     }
 }
