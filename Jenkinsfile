@@ -10,6 +10,7 @@ pipeline {
 
         stage('push docker') {
             steps {
+                    sh 'docker login'
                     sh 'docker push  thakorn09/todoapp'
                 }
             }
