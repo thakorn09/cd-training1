@@ -7,6 +7,12 @@ pipeline {
                     sh 'docker build -t thakorn09/todoapp .'
                 }
             }
+
+        stage('push docker') {
+            steps {
+                    sh 'docker push  thakorn09/todoapp .'
+                }
+            }
         
         stage('Prepare Hello script') {
             steps {
